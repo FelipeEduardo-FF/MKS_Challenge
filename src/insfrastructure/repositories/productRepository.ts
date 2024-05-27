@@ -6,8 +6,8 @@ import { IProductRepository } from "../../application/interfaces/IProductReposit
 class ProductRepository  implements IProductRepository{
   private apiUrl: string;
 
-  constructor(apiUrl: string) {
-    this.apiUrl = apiUrl;
+  constructor() {
+    this.apiUrl = "https://mks-frontend-challenge-04811e8151e6.herokuapp.com/api/v1/products?page=1&rows=50&sortBy=id&orderBy=ASC";
   }
 
   public async fetchProducts(): Promise<Product[]> {
