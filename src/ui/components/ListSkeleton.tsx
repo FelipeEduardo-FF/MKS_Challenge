@@ -2,13 +2,7 @@
 import React from "react";
 import Skeleton from "react-loading-skeleton";
 import "react-loading-skeleton/dist/skeleton.css";
-import {
-  Card,
-  CardContent,
-  CardDescription,
-  CardHeader,
-  CardTitle,
-} from "./ui/card";
+import { Card, CardContent, CardHeader } from "./ui/card";
 
 const ProductListSkeleton: React.FC = () => {
   const skeletonItems = Array(8)

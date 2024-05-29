@@ -7,6 +7,7 @@ type CartContextType = {
   decreaseProductToCart: (product: Product) => void;
   removeProductToCart: (product: Product) => void;
   cart: CartItem[];
+  Price: number;
 };
 
 export const CartContext = createContext<CartContextType | undefined>(
@@ -62,6 +63,12 @@ export const CartProvider = ({ children }: CartProviderProps) => {
     });
   };
 
+  const getTotalPrice = (): number => {
+    return cart.reduce((total: number, cartItem: CartItem) => {
+      return total + cartItem.product.price * cartItem.quantity;
+    }, 0);
+  };
+
   return (
     <CartContext.Provider
       value={{
@@ -69,6 +76,7 @@ export const CartProvider = ({ children }: CartProviderProps) => {
         addProductToCart,
         decreaseProductToCart,
         removeProductToCart,
+        Price: getTotalPrice(),
       }}
     >
       {children}

@@ -1,4 +1,3 @@
-import { useState } from "react";
 import { useQuery } from "react-query";
 import { Product } from "src/domain/entities/Product";
 import ProductRepository from "../../insfrastructure/repositories/ProductRepository";
@@ -10,7 +9,7 @@ import ProductList from "@/components/ProductComponents/ProductList";
 function ProductsPage() {
   const productRepositoy = new ProductRepository();
 
-  const { data, error, isLoading } = useQuery<Product[]>(
+  const { data, isLoading } = useQuery<Product[]>(
     "featchProdutos",
     async () => await productRepositoy.fetchProducts()
   );

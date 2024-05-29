@@ -22,7 +22,7 @@ function ProductCard({ product }: ProductCardProperty) {
         </div>
 
         <div className="flex justify-between">
-          <h1 className="text-lg">{product.name}</h1>
+          <h1 className="text-lg mr-1">{product.name}</h1>
           <div>
             <Badge>
               {Intl.NumberFormat("pt-BR", {

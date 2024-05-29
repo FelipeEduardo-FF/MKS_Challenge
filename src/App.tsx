@@ -1,5 +1,4 @@
 import NavBar from "@/components/NavBar";
-import { Button } from "./ui/components/ui/button";
 import ProductsPage from "@/pages/ProductsPage";
 import { QueryClient, QueryClientProvider } from "react-query";
 import Footer from "@/components/Footer";
