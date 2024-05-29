@@ -1,6 +1,7 @@
 import axios from "axios";
 import { Product } from "../../domain/entities/Product";
 import { IProductRepository } from "../../application/interfaces/IProductRepository";
+import { ApiResponseDTO } from "src/application/DTO/ApiResponseDTO";
 
 
 class ProductRepository  implements IProductRepository{
@@ -12,8 +13,8 @@ class ProductRepository  implements IProductRepository{
 
   public async fetchProducts(): Promise<Product[]> {
     try {
-      const response = await axios.get<Product[]>(this.apiUrl);     
-      return response.data;
+      const response = await axios.get<ApiResponseDTO<Product>>(this.apiUrl);     
+      return response.data.products;
     } catch (error) {
       throw new Error('Error fetching products');
     }
